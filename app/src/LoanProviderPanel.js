@@ -27,9 +27,11 @@ class AccountPanel extends React.Component {
             const contract = drizzle.contracts.LoanProvider;
 
             const value = (this.state.amountValue) * (10 ** 18)
-            const rate = Math.pow(this.state.rateValue, 1 / (6 * 60 * 24 * 365));
+            const rate = ((Math.pow(this.state.rateValue, 1 / (6 * 60 * 24 * 365)) - 1) * 10**18);
 
-            const stackId = contract.methods["createLoan"].cacheSend( value.toString(), Math.trunc(rate), {
+            console.log(rate)
+
+            const stackId = contract.methods["createLoan"].cacheSend( value.toString(), Math.trunc(rate).toString(), {
                 from: drizzleState.accounts[0]
             });
 
@@ -42,7 +44,7 @@ class AccountPanel extends React.Component {
         const { LoanProvider } = this.props.drizzleState.contracts;
         const storedTotalApplications = LoanProvider.totalApplications[this.state.totalApplicationsDataKey];
 
-        const interestPerBlock = <span className="block-interest">Interest per block: {this.state.rateValue / (6 * 60 * 24 * 365)}%</span>;
+        const interestPerBlock = <span className="block-interest">Interest per block: {((Math.pow(this.state.rateValue, 1 / (6 * 60 * 24 * 365)) - 1)).toFixed(18)}%</span>;
 
         const loanApplications = []
 

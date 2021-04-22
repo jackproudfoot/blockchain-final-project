@@ -146,6 +146,7 @@ class AccountPanel extends React.Component {
 
             const getRate = LoanTokenContract.getRate[this.state.getRateDataKey];
             rate = getRate && getRate.value;
+            console.log(rate)
 
             // console.log(LoanTokenContract)
             // console.log(LoanProvider)
@@ -167,7 +168,7 @@ class AccountPanel extends React.Component {
                         Requested Loan Amount: {storedEscrow && storedEscrow.value.tokenAmount / 10**18} STBC
                         <span className="contribute-form">{claimButton}</span>
                     </p>
-                    <p>Rate: {rate}</p>
+                    <p>Rate: {((rate * 10**-18)).toFixed(18)}% per block </p>
                     <p>Total Committed Funds: {storedEscrow && storedEscrow.value.tokenReceived / 10**18} STBC</p>
                     <p>
                         Your Committed Funds: {yourBalance / 10**18} STBC
@@ -176,7 +177,7 @@ class AccountPanel extends React.Component {
                         </span>
                     </p>
                     <p>
-                        Loan Balance: { (tokenBalance / 10**18).toFixed(9) }
+                        Loan Balance: { (tokenBalance / 10**18).toFixed(9) } STBC
                         <span className="contribute-form">
                             <input name="paymentAmount" value={this.state.paymentAmount} onChange={this._updateInput} /> STBC <button onClick={this._makePayment}>Make Payment</button>
                         </span>

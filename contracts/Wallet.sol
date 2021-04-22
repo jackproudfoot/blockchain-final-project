@@ -70,4 +70,11 @@ contract Wallet is AccessControl{
 
         wallet.transfer(address(this).balance);
     }
+
+    /**
+    * @dev Get the current unclaimed stablecoin balance 
+    */
+    function unclaimedBalanceOf(address _lender) public view returns (uint256) {
+        return _unclaimedStablecoinBalance[_lender];
+    }
 }

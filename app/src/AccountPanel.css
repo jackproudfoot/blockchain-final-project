@@ -1,0 +1,16 @@
+button {
+    margin-right: 15px;
+}
+
+input {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.allowance-form {
+    margin-left: 75px;
+}
+
+.allowance-form-button {
+    margin-left: 5px;
+}

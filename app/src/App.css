@@ -1,0 +1,31 @@
+.App {
+  text-align: left;
+
+  transform: translate(5%, 0%);
+  width: 90%;
+}
+
+.App-header {
+  height: 150px;
+  
+  font-size: calc(10px + 3vmin);
+  
+  color: black;
+
+}
+
+.contract-container div {
+  margin-bottom: 15px;
+}
+
+.panel {
+  border: 1px solid black;
+  /*border-radius: 25px;*/
+
+  min-height: 100px;
+}
+
+.panel-content {
+  transform: translate(5%, 5%);
+}
+

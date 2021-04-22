@@ -1,0 +1,21 @@
+.application-panel {
+    border-width: 1px;
+    border-style: dashed;
+
+    width: 75%;
+}
+
+.contribute-form {
+    margin-left: 75px;
+}
+
+.contribute-form button {
+    margin-left: 5px;
+}
+
+.la-panel-content {
+    margin-top: 5%;
+    margin-left: 5%;
+    min-height: 350px;
+    width: 100%;
+  }

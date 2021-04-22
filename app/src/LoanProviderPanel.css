@@ -1,0 +1,14 @@
+.create-loan-application input {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.lp-panel-content {
+    margin: 5% 0% 5% 5%;
+}
+
+.block-interest {
+    font-style: italic;
+    font-size: 14px;
+    color: gray;
+}
